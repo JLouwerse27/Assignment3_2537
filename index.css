@@ -33,3 +33,7 @@
   border-color: rgb(16, 34, 28);
   border-radius: 0;
 }
+
+label {
+  padding: 2px;
+}

@@ -57,6 +57,31 @@ const paginate = async (currentPage, PAGE_SIZE, pokemons) => {
     });
 };
 
+async function fetchPokemonTypes() {
+    console.log("gonna fetch");
+    let response = await axios.get(
+        "https://pokeapi.co/api/v2/type/"
+    );
+    types = response.data.results;
+
+    let container = document.getElementById('checkboxContainer');
+    $(container).empty();
+    
+    for (i = 0; i < types.length; i++) {
+        let checkBox = document.createElement('input');
+        checkBox.type = "checkbox";
+
+        let label = document.createElement('label');
+        label.textContent = types[i].name + " ";
+
+        container.appendChild(label);
+        container.appendChild(checkBox);
+    }
+
+}
+
+fetchPokemonTypes();
+
 const setup = async () => {
     // test out poke api using axios here
 
