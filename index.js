@@ -71,6 +71,10 @@ const setup = async () => {
     const numPages = Math.ceil(pokemons.length / PAGE_SIZE);
     updatePaginationDiv(currentPage, numPages);
 
+    //TODO: make into fn
+    //$("info").empty();
+    //$('info').add(`<h1> Showing ${PAGE_SIZE} out of ${pokemons.length} pokemon. </h1>`);
+    $("#info").html(`<h1> Showing ${PAGE_SIZE} out of ${pokemons.length} pokemon. </h1>`);
 
     // pop up modal when clicking on a pokemon card
     // add event listener to each pokemon card
